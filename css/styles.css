@@ -7,7 +7,7 @@
 body {
 	font-family: 'Courier New', Courier, monospace;
 	background-color: grey;
-	color: #fff;
+	color: black;
 	padding: 20px;
 }
 
@@ -17,3 +17,59 @@ header {
 	background-color: darkgrey;
 }
 
+main {
+
+	background: #fff;
+	padding: 20 px
+
+}
+
+h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.Product-registry {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.Product-registry label{
+	font-weight: bold;
+	color: white;
+	background-color: black;;
+}
+
+.submit-button{
+	border: 2px solid black;
+	padding: 10px;
+	background-color: white;
+}
+
+.submit-button :hover {
+	background-color: darkgrey;
+}
+
+.Registered-products {
+	margin-top: 20px;
+}
+
+.Registered-products header{
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+}
+
+.product-lust-ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.products-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
