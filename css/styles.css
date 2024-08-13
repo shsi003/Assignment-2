@@ -4,23 +4,9 @@
 	box-sizing: border-box;
 }
 
-.Registered-products{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 10px;
+body {
+	font-family: 'Courier New', Courier, monospace;
+	background-color: darkblue;
+	color: #fff;
+	padding: 20px;
 }
-
-.Registered-products header {
-	flex-basis: 80%;
-	display: flex;
-	font-weight: bold;
-	text-align: center;
-
-}
-
-.products-row{
-	display: flex;
-	
-}
-
