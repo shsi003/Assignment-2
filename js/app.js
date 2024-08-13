@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const productRegistry = document.querySelector(".Product-registry");
 	const productName = document.querySelector(".Product-name");
 	const productID = document.querySelector(".Product-ID");
-	const manufacturer = document.querySelector(".manufacturer");
+	const manufacturer = document.querySelector(".Manufacturer");
 	const expirationDate = document.querySelector(".Expiration-date");
 	const quantity = document.querySelector(".Quantity");
 	const productListUl = document.querySelector(".product-list-ul");
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		)
 		
 		Product.addProduct(newProduct);
+		UL.renderProducts(products);
 		productRegistry.reset();
 		console.log(newProduct);
 		console.log(products);
@@ -42,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			products.push(product)
 		}
 
-		static deleteProduct(id, productsArray){
-			const index = productsArray.findIndex(Product => Product.ID.toString() === id.toString());
+		static deleteProduct(productID, productsArray){
+			const index = productsArray.findIndex(Product => Product.productID.toString() === productID.toString());
 			if(index !== -1){
 				productsArray.splice(index, 1);
 			}
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	class UL {
 		static renderProducts(products) {
-			productsListUl.textContent = '';
+			productListUl.textContent = '';
 			products.forEach((product) => {
 				const liRow = document.createElement('li');
 				const renderedProductName = document.createElement('span');
@@ -67,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				renderedProductID.textContent = product.productID;
 				renderedManufacturer.textContent = product.manufacturer;
 				renderedExpirationDate.textContent = product.expirationDate;
-				renderedQuantity.textcontent = product.quantity;
+				renderedQuantity.textContent = product.quantity;
 				deleteButton.textContent = 'DELETE';
 
 				liRow.classList.add('products-row');
 				deleteButton.classList.add('delete-button');
 
-				liRow.dataset.id = product.ID;
+				liRow.dataset.id = product.ProductID;
 				productListUl.append(liRow);
 				liRow.append(renderedProductName, renderedProductID, renderedManufacturer,
 					renderedExpirationDate, renderedQuantity, deleteButtonContainer);
@@ -81,10 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				
 				deleteButton.addEventListener('click', (e) => {
 					const rowID = e.currentTarget.parentElement.parentElement.dataset.id
-					product.deleteProduct(rowID, products)
+					Product.deleteProduct(rowID, products);
+					UL.renderProducts(products);
 				})
 			})
 		}
 	}
-
+console.log(products);
 });

@@ -1,0 +1,21 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.Registered-products{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.products-row span {
+	flex: 1;
+	text-align: left;
+}
+
+.delete-button{
+	margin-left: 10px;
+}
