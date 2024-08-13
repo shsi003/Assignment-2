@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			productID.value,
 			manufacturer.value,
 			expirationDate.value,
-			quantity.value,
+			quantity.value
 		)
 		
 		Product.addProduct(newProduct);
@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	class Product {
-		constructor(productName, productID, manufacturer, expirationDate, quanity){
+		constructor(productName, productID, manufacturer, expirationDate, quantity){
 			this.productName = productName;
 			this.productID = productID;
 			this.manufacturer = manufacturer;
-			this.expiraitonDate = expirationDate;
-			this.quantity = qunatity;
+			this.expirationDate = expirationDate;
+			this.quantity = quantity;
 		}
 
 		static addProduct(product){
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		static deleteProduct(id, productsArray){
-			const index = productsArray.findIndex(product => product.ID.toString() === id.toString());
+			const index = productsArray.findIndex(Product => Product.ID.toString() === id.toString());
 			if(index !== -1){
 				productsArray.splice(index, 1);
 			}
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	class UL {
 		static renderProducts(products) {
-			productsUl.textContent = '';
+			productsListUl.textContent = '';
 			products.forEach((product) => {
 				const liRow = document.createElement('li');
 				const renderedProductName = document.createElement('span');
