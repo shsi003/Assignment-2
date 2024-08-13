@@ -7,7 +7,7 @@ export class Product {
 		this.quantity = quantity;
 	}
 
-	static addProduct(product){
+	static addProduct(product, products){
 		products.push(product);
 		localStorage.setItem('products', JSON.stringify(products));
 	}
