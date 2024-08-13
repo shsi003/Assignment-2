@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	productRegistry.addEventListener("submit", (e) => {
 		e.preventDefault();
 
+	
+
 		let newProduct;
 		newProduct = new Product(
 			productName.value,
@@ -84,7 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			expirationDate.value,
 			quantity.value
 		)
-		
+
+
+	
+
+	
 		Product.addProduct(newProduct);
 		localStorage.setItem('products', JSON.stringify(products));
 		UL.renderProducts(products);

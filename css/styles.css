@@ -73,3 +73,14 @@ h1{
 	padding: 10px;
 	border-bottom: 1px solid black;
 }
+
+.delete-button{
+	background-color: red;
+	color: white;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.delete-button :hover{
+ background-color: rgb(168, 16, 16);
+}
