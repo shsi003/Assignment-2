@@ -11,11 +11,16 @@
 	margin-bottom: 10px;
 }
 
-.products-row span {
-	flex: 1;
-	text-align: left;
+.Registered-products header {
+	flex-basis: 80%;
+	display: flex;
+	font-weight: bold;
+	text-align: center;
+
 }
 
-.delete-button{
-	margin-left: 10px;
+.products-row{
+	display: flex;
+	
 }
+
