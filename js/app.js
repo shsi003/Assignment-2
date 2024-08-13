@@ -1,4 +1,13 @@
+import { Product } from "./product";
+
 document.addEventListener("DOMContentLoaded", () => {
+
+/*
+Code format adapted from/inspired  by Reza Dianat´s "Object-oriented-project ",
+availabe at https://kristiania.instructure.com/courses/11371/files/1308468?module_item_id=455784
+
+*/ 	
+
 	const products = JSON.parse(localStorage.getItem('products')) || [];
 	const productRegistry = document.querySelector(".Product-registry");
 	const productName = document.querySelector(".Product-name");
@@ -8,30 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const quantity = document.querySelector(".Quantity");
 	const productListUl = document.querySelector(".product-list-ul");
 
-	class Product {
-		constructor(productName, productID, manufacturer, expirationDate, quantity){
-			this.productName = productName;
-			this.productID = productID;
-			this.manufacturer = manufacturer;
-			this.expirationDate = expirationDate;
-			this.quantity = quantity;
-		}
-
-		static addProduct(product){
-			products.push(product);
-			localStorage.setItem('products', JSON.stringify(products));
-		}
-
-		static deleteProduct(productID, productsArray){
-			const index = productsArray.findIndex(Product => Product.productID.toString() === productID.toString());
-			if(index !== -1){
-				productsArray.splice(index, 1);
-				localStorage.setItem('products', JSON.stringify(productsArray));
-			}
-
 	
-		}
-	}
 
 	class UL {
 		static renderProducts(products) {
