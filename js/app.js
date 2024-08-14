@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     productRegistry.addEventListener("submit", (e) => {
         e.preventDefault();
 
+		if (!productName.value || !productID.value || !manufacturer.value || !expirationDate.value || !quantity.value) {
+            alert('Please fill in all fields');
+            return;
+        }
+
         let newProduct = new Product(
             productName.value,
             productID.value,
