@@ -7,16 +7,23 @@ export class Product {
 		this.quantity = quantity;
 	}
 
-	static addProduct(product, products){
+	static getProducts() {
+		return JSON.parse(localStorage.getItem('products')) || []; // Retrieve products from local storage
+	}
+
+	
+	static addProduct(product){
+		const  products = Product.getProducts();
 		products.push(product);
 		localStorage.setItem('products', JSON.stringify(products));
 	}
 
 	static deleteProduct(productID, productsArray){
-		const index = productsArray.findIndex(Product => Product.productID.toString() === productID.toString());
+		const products = Product.getProducts();
+		const index = products.findIndex(Product => Product.productID.toString() === productID.toString());
 		if(index !== -1){
-			productsArray.splice(index, 1);
-			localStorage.setItem('products', JSON.stringify(productsArray));
+			products.splice(index, 1);
+			localStorage.setItem('products', JSON.stringify(products));
 		}
 
 

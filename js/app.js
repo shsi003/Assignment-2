@@ -19,7 +19,7 @@ availabe at https://kristiania.instructure.com/courses/11371/files/1311555?modul
 	const productListUl = document.querySelector(".product-list-ul");
 
 	
-	Ul.renderProducts(products, productListUl);
+	Ul.renderProducts(products);
 
 	
 
