@@ -1,8 +1,8 @@
-export class Ul {
+export class UL {
 	static renderProducts(products) {
-		const productListUl = document.querySelector(".product-list-ul");
+		const productListUl = document.querySelector('.product-list-ul'); 
 
-		productListUl.textContent = '';
+		productListUl.textContent = ''; 
 		products.forEach((product) => {
 			const liRow = document.createElement('li');
 			const renderedProductName = document.createElement('span');
@@ -30,10 +30,10 @@ export class Ul {
 			deleteButtonContainer.append(deleteButton);
 			
 			deleteButton.addEventListener('click', (e) => {
-				const rowID = e.currentTarget.parentElement.parentElement.dataset.id
-				Product.deleteProduct(rowID, products);
-				UL.renderProducts(products, productListUl);
-			})
-		})
+				const rowID = e.currentTarget.parentElement.parentElement.dataset.id;
+				Product.deleteProduct(rowID);
+				UL.renderProducts(Product.getProducts()); 
+			});
+		});
 	}
 }
