@@ -1,3 +1,6 @@
+//Adapted from "Object-Oriented-Programming.pdf" 
+//at https://kristiania.instructure.com/courses/11371/files/1308468?module_item_id=455784
+
 export class UL {
 	static renderProducts(products) {
 		const productListUl = document.querySelector('.product-list-ul'); 
